@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center">
+  <nav class="navbar navbar-expand-lg sticky-top bg-dark border border-top-0 rounded-5 rounded-top-0">
+    <div class="container-fluid">
+      
+        <ul class="nav p-1">
+          <li class="ms-1 me-4">
+            <% if (title == "News Controller") { %>
+              <a class="nav-link px-2 link-light" href="/controller/news">News</a>
+              <% } else { %>
+              <a class="nav-link px-2 link-secondary" href="/controller/news">News
+              </a>
+              <% } %>
+          </li>
+          <li class="me-4">
+            <% if (title == "Works Controller") { %>
+              <a class="nav-link px-2 link-light" href="/controller/work">Works</a>
+              <% } else { %>
+              <a class="nav-link px-2 link-secondary" href="/controller/work">Works
+              </a>
+              <% } %>
+          </li>
+          <li class="me-1">
+            <a href="#" class="nav-link px-2 link-secondary ">Database in JSON</a>
+          </li>
+          
+          <li class="me-1">
+            <a href="/users/logout" class="nav-link px-2 link-secondary "> Logout</a>
+          </li>
+        </ul>
+    </div> 
+  </nav>
+
+</div>

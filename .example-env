@@ -1,0 +1,3 @@
+PORT=3000
+MONGO_URL="https://localhost/db"
+SESSION_SECRET="my secret key" 
