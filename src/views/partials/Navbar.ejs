@@ -1,75 +1,65 @@
-<nav class="navbar navbar-expand-lg bg-dark">
-  <div class="container-fluid ">
-    <a class="navbar-brand" href="/">
-      <img
-        src="/ico/icon.png"
-        alt="Logo"
-        width="30"
-        height="24"
-        class="ms-1 me-1 d-inline-block align-text-top"
-      />
-      Navbar
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#NavBar"
-      aria-controls="NavBar"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse" id="NavBar">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <% if (title == "Home") { %>
-          <a class="nav-link active" href="/">Home</a>
-          <% } else { %>
-          <a class="nav-link" href="/">Home</a>
-          <% } %>
-        </li>
-        <li class="nav-item">
-          <% if (title == "News") { %>
-          <a class="nav-link active" href="/news">News</a>
-          <% } else { %>
-          <a class="nav-link" href="/news">News</a>
-          <% } %>
-        </li>
-        <li class="nav-item">
-          <% if (title == "Works") { %>
-          <a class="nav-link active" href="/works">Works</a>
-          <% } else { %>
-          <a class="nav-link" href="/works">Works</a>
-          <% } %>
-        </li>
-        <li class="nav-item">
-          <% if (title == "Duolingo") { %>
-          <a class="nav-link active" href="/duolingo">Duolingo</a>
-          <% } else { %>
-          <a class="nav-link" href="/duolingo">Duolingo</a>
-          <% } %>
-        </li>
-        <% if (user) { %>
-        <li class="nav-item">
-          <% if (title == "Controller Panel" || title == "Work Controller" || title == "News Controller") { %>
-          <a class="nav-link active" href="/controller">Controller</a>
-          <% } else { %>
-          <a class="nav-link" href="/controller">Controller</a>
-          <% } %>
-        </li>
+<% if (title=="News" ) { %>
+
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-dark-subtle">
+    <% } else { %>
+      <nav class="navbar navbar-expand-lg bg-dark">
         <% } %>
-      </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+              <img src="/ico/icon.png" alt="Logo" width="30" height="24"
+                class="ms-1 me-1 d-inline-block align-text-top" />
+              Navbar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavBar"
+              aria-controls="NavBar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="NavBar">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <% if (title=="Home" ) { %>
+                    <a class="nav-link active" href="/">Home</a>
+                    <% } else { %>
+                      <a class="nav-link" href="/">Home</a>
+                      <% } %>
+                </li>
+                <li class="nav-item">
+                  <% if (title=="News" ) { %>
+                    <a class="nav-link active" href="/news">News</a>
+                    <% } else { %>
+                      <a class="nav-link" href="/news">News</a>
+                      <% } %>
+                </li>
+                <li class="nav-item">
+                  <% if (title=="Works" ) { %>
+                    <a class="nav-link active" href="/works">Works</a>
+                    <% } else { %>
+                      <a class="nav-link" href="/works">Works</a>
+                      <% } %>
+                </li>
+                <li class="nav-item">
+                  <% if (title=="Duolingo" ) { %>
+                    <a class="nav-link active" href="/duolingo">Duolingo</a>
+                    <% } else { %>
+                      <a class="nav-link" href="/duolingo">Duolingo</a>
+                      <% } %>
+                </li>
+                <% if (user) { %>
+                  <li class="nav-item">
+                    <% if (title=="Controller Panel" || title=="Work Control" || title=="News Control" ) { %>
+                      <a class="nav-link active" href="/controller">Controller</a>
+                      <% } else { %>
+                        <a class="nav-link" href="/controller">Controller</a>
+                        <% } %>
+                  </li>
+                  <% } %>
+              </ul>
+              <form id="SearchForm" class="d-flex" role="search">
+                <input id="SearchInput" class="form-control me-2" type="search" placeholder="Search"
+                  aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+      </nav>
+  </nav>

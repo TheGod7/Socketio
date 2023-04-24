@@ -1,57 +1,29 @@
-<div class="p-2 mt-3">
-  <div class="text-bg-dark">
-    <h1 class="text-center fw-bold display-5">News controller</h1>
-    <div class="container">
-      <div class="border-bottom"></div>
-    </div>
+<main class="container">
+  <div class="mt-3">
+    <span class="fs-5"><a href="/" class="link-offset-2 link-underline link-underline-opacity-0 link-secondary ">
+        <i class="fa-solid fa-house-chimney me-1"></i>
+        <span class="fs-4">Home</span>
+      </a>
+      > <span class="fw-bold">News</span></span>
   </div>
-</div>
+  <div class="border border-dark-subtle border-bottomm mt-2"></div>
 
-<div class="container-fluid mt-4">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th class="col">#</th>
-                <th class="col">date</th>
-                <th class="col">title</th>
-                <th class="col">Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for( let i = 0; i < News.length; i++ ) { %>
-              <form
-                action="/news/delete/<%- News[i]._id %>?_method=DELETE"
-                method="POST"
-              >
-                <tr>
-                  <th scope="row"><%- i %></th>
-                  <td>
-                    <%- new Intl.DateTimeFormat("en-US").format(new
-                    Date(News[i].date)) %>
-                  </td>
-                  <td><%- News[i].title %></td>
-                  <td>
-                    <button type="submit" class="btn btn-outline-danger">
-                      D
-                    </button>
-                  </td>
-                </tr>
-              </form>
-              <% } %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+  <div class="list-groups mt-3">
 
-    <div class="col">
-      <div class="card">
-        <div class="card-body"></div>
-      </div>
-    </div>
+    <% news.forEach(data=> { %>
+      <article>
+        <a href="/news/<%- data._id %>"
+          class="div-2 mt-1 mb-2 list-group-item list-group-item list-group-item-dark p-3 rounded-2"
+          aria-current="true">
+          <h5 class="mb-1">
+            <i class="fa-solid fa-newspaper me-3"></i> <%- data.title %>
+          </h5>
+          <small class="text-body-secondary ms-2">Date: <%- new Intl.DateTimeFormat("en-US").format(new Date(data.date))
+              %></small>
+        </a>
+      </article>
+
+      <% }) %>
   </div>
-</div>
+  <div class="border border-dark-subtle border-bottomm mt-3"></div>
+</main>

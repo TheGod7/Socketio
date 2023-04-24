@@ -51,5 +51,5 @@ npm run start
 ```
 ## Usage <a name = "usage"></a>
 
-yet is all you can use this to learn like me or tell me some errors you see 
+yet is all you can use this to learn like me or tell me some errors you see is unfished help me to finish it  
 

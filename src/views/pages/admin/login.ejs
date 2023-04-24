@@ -8,7 +8,7 @@
         <h1 class="card-title text-center mb-4 mb-1">Platform Login</h1>
 
         <% if (error.length >= 1) { %>
-          <form
+        <form
           action="/users/login"
           method="POST"
           class="row g-3 was-validated"
@@ -44,43 +44,43 @@
             <button class="mt-4 btn btn-success" type="submit">login</button>
           </div>
         </form>
-          <% } else { %>
-            <form
-              action="/users/login"
-              method="POST"
-              class="row g-3 needs-validation"
-              novalidate
-            >
-              <div class="mb-2">
-                <label for="email" class="form-label">Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="form-control"
-                  placeholder="Email"
-                  required
-                />
-                <div class="invalid-feedback">Please put a email</div>
-              </div>
-    
-              <div class="mb-2">
-                <label for="password" class="form-label">Password:</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="form-control"
-                  placeholder="Password"
-                  required
-                />
-                <div class="invalid-feedback">Please enter a password</div>
-              </div>
-    
-              <div class="d-grid gap-2">
-                <button class="mt-4 btn btn-success" type="submit">login</button>
-              </div>
-            </form>
+        <% } else { %>
+        <form
+          action="/users/login"
+          method="POST"
+          class="row g-3 needs-validation"
+          novalidate
+        >
+          <div class="mb-2">
+            <label for="email" class="form-label">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-control"
+              placeholder="Email"
+              required
+            />
+            <div class="invalid-feedback">Please put a email</div>
+          </div>
+
+          <div class="mb-2">
+            <label for="password" class="form-label">Password:</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+            <div class="invalid-feedback">Please enter a password</div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button class="mt-4 btn btn-success" type="submit">login</button>
+          </div>
+        </form>
         <% } %>
 
         <p
@@ -92,22 +92,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  const forms = document.querySelectorAll(".needs-validation");
-
-  Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      "submit",
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
-        form.classList.add("was-validated");
-      },
-      false
-    );
-  });
-</script>

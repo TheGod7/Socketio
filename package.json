@@ -29,6 +29,7 @@
     "socket.io": "^4.6.1"
   },
   "devDependencies": {
+    "algoliasearch": "^4.17.0",
     "nodemon": "^2.0.22"
   }
 }

@@ -1,0 +1,23 @@
+<main class="container">
+    <div class="mt-3">
+        <span class="fs-5"><a href="/" class="link-offset-2 link-underline link-underline-opacity-0 link-secondary ">
+                <i class="fa-solid fa-house-chimney me-1"></i>
+                <span class="fs-4">Home</span>
+            </a>
+            > <a href="/news" class="link-offset-2 link-underline link-underline-opacity-0 link-secondary ">News</a> >
+            <span class="fw-bold"><%- news.title %></span></span>
+    </div>
+    <div class="border border-dark-subtle border-bottomm mt-2"></div>
+
+    <div>
+        <header>
+            <h1 class="text-center mt-3"><%- news.title %> </h1>
+            <p class="text-secondary text-center"><%- new Intl.DateTimeFormat("en-US").format(new Date(news.date)); %>
+            </p>
+
+            <p class="fs-5 mt-5">
+                <%= news.content %>
+            </p>
+        </header>
+    </div>
+</main>

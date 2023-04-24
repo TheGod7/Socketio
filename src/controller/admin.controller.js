@@ -9,9 +9,9 @@ export const controller = (req, res) => {
 };
 
 export const NewsControl = async (req, res) => {
-  const news = await NewsSchema.find().sort("desc").lean();
+  const news = await NewsSchema.find().sort({ date: "desc" }).lean();
 
-  res.render("pages/News/news", {
+  res.render("pages/Admin/news", {
     layout: "./layouts/admin",
     title: "News Control",
     News: news,
@@ -19,14 +19,29 @@ export const NewsControl = async (req, res) => {
 };
 
 export const DeleteNewsControl = async (req, res) => {
-  console.log(req.params);
-  // const news = await NewsSchema.find();
+  const id = req.params.id; // the id of the news
+  await NewsSchema.findByIdAndDelete(id);
+  req.flash("done", "Delete correctly");
 
-  // res.render("pages/News/news", {
-  //   layout: "./layouts/admin",
-  //   title: "News Control",
-  //   News: news,
-  // });
+  res.redirect("/controller/news");
+};
+
+export const AddNewsControl = async (req, res) => {
+  const { title, content } = req.body;
+  console.log(content);
+
+  try {
+    const News = new NewsSchema({ title, content });
+
+    await News.save();
+
+    req.flash("done", "added the new correctly");
+    res.redirect("/controller/news");
+  } catch (err) {
+    req.flash("error", err);
+    console.log(err);
+    res.redirect("/controller/news");
+  }
 };
 
 export const WorksControl = (req, res) => {

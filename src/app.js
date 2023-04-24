@@ -56,7 +56,7 @@ app.use(flash());
 app.use((req, res, next) => {
   res.locals.error = req.flash("error");
   res.locals.user = req.user || null;
-
+  res.locals.done = req.flash("done");
   // console.log(res.locals);
   next();
 });
